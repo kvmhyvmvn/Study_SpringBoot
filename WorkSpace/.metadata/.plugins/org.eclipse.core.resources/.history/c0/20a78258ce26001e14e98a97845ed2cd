@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h3><a th:href="@{/}">내 정보</a></h3>
+<div>이름 : <span th:text="${name}"></span></div>
+<div>성별 : [[${gender}]]</div>
+<div>성별 : [(${gender})]</div>
+
+<!--
+	[[ : html 태그가 escape, 순수 텍스트로 표현
+	[( : html 태그가 unescape, 태그로 해석된 텍스트 표현
+-->
+
+<div th:text="|${name} : ${gender}|"></div>
+<div th:text="${name} + ' : ' + ${gender}"></div>
+<div th:text="${name} + ' : ' + ${phone ?: '없음'}"></div>
+<div>성명 : 연락처 [[${name}]][[${phone}]]</div>
+</body>
+</html>

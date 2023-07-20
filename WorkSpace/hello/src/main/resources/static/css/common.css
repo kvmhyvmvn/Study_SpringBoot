@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+a {
+	color: inherit
+}
+
+a:not(.btn):link, a:not(.btn):hover {
+	text-decoration: none;
+	color: inherit;
+}
+
+table {
+	width: 100%;
+	border-top : 2px solid #666;
+	color: #666;
+}
+
+table th, table td {
+	border-right: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	padding: 10px 16px;
+}
+table th:last-child, table td:last-child {border-right:none}
+table th {background-color: #eee !important; }
+table.tb-list tr{height: 48px}
+table.tb-row tr{height: 60px}
+table.tb-list th, table.tb-list td{text-align: center; }
+
+a.text-link:hover {color : #0d6efd; text-decoration: underline; }
+a.text-link {text-decoration: none; cursor: pointer;}
+
+.profile {width: 38px; height: 38px; border-radious: 50% }
+.font-profile {font-size: 38px; }
+
+
+.date + .date-delete {position: relative; right: 34px; display:none; }
+
+input[type=file] {display : none} /* 기본 파일태그는 안보이게 */
+.file-preview img {max-height: 38px; }
+
+textarea.form-control {height : 400px; resize: none; }
+.comment textarea {height: 90px}
+.comment > * { height:90px }
+
+#modal-image .modal-body img {width: 100% }
+
+.w-px300 { width: 300px; }
+.w-px250 { width: 250px; }
+.w-px200 { width: 200px; }
+
+.w-px100 { width: 100px; }
+.w-px90 { width: 90px; }
+.w-px80 { width: 80px; }

@@ -1,0 +1,5 @@
+package smart.controller;
+
+public class HomeController {
+
+}

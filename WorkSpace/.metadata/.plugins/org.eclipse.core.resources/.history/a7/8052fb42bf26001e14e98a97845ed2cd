@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h3>내 정보</h3>
+<div>이름 : <span th:text="${name}"></span></div>
+<div>이름 : [[${name}]]</div>
+<div>이름 : [(${name})]</div>
+</body>
+</html>
