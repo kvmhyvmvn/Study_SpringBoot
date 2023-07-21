@@ -1,0 +1,5 @@
+package smart.entity.hr;
+
+public class Employee {
+
+}

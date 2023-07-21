@@ -1,0 +1,8 @@
+타임리프 코드 자동완성을 위한 plugin
+https://www.thymeleaf.org/eclipse-plugin-update-site/
+
+Spring Boot + JPA + QueryDSL
+
+DB 테이블(ORM: Object Relational Mapping) : entity==domain
+
+Repository > CrudRepository > PagingAndSortRepository > JpaRepository

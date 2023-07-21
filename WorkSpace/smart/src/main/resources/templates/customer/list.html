@@ -17,6 +17,13 @@
 			<th>이메일</th>
 		</tr>
 		<tr th:if="${list == null}"><td colspan="3">고객목록이 없습니다.</td></tr>
+		<th:block th:if="${list != null}">
+		<tr th:each="vo : ${list}">
+			<td><a th:href="@{/customer/info(id=${vo.id})}">[[${vo.name}]]</a></td>
+			<td th:text="${vo.phone}"></td>
+			<td><a th:href="@{/customer/info/{id} (id=${vo.id})}">[[${vo.email}]]</a></td>
+		</tr>
+		</th:block>
 </table>
 </body>
 </html>

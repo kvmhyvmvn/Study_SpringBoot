@@ -6,7 +6,16 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 	<meta name="description" content="" />
 	<meta name="author" content="" />
-	<title>스마트웹&amp;앱</title>
+	<th:block th:switch="${session.category}">
+	<title>스마트웹&amp;앱
+		<th:block th:case="cu">고객관리</th:block>
+		<th:block th:case="hr">사원관리</th:block>
+		<th:block th:case="no">공지사항</th:block>
+		<th:block th:case="bo">방명록</th:block>
+		<th:block th:case="da">공공데이터</th:block>
+		<th:block th:case="vi">시각화</th:block>
+	</title>
+	</th:block>
 
 	<!-- Favicon-->
 	<link rel="icon" type="image/x-icon" th:href="@{/img/hanul.ico}" />
@@ -35,9 +44,9 @@
 				</a>
 			</div>
 			<div class="list-group list-group-flush">
-				<a th:href="@{/customer/list}"
-					class="list-group-item list-group-item-action list-group-item-light p-3">고객관리</a>
-				<a th:href="@{/hr/list}"
+				<a th:href="@{/customer/list}" th:classappend="${session.category == 'cu'} ? 'active'"
+					class=" active list-group-item list-group-item-action list-group-item-light p-3">고객관리</a>
+				<a th:href="@{/hr/list}" th:classappend="${session.category == 'hr'} ? 'active'"
 					class="list-group-item list-group-item-action list-group-item-light p-3">사원관리</a>
 				<a class="${category eq 'no' ? 'active':''} list-group-item list-group-item-action list-group-item-light p-3">공지사항</a>
 				<a class="${category eq 'bo' ? 'active':''} list-group-item list-group-item-action list-group-item-light p-3">방명록</a>

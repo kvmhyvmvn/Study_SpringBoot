@@ -1,0 +1,11 @@
+package smart.entity.hanul;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter @Setter
+public class Customer {
+	// id, name, gender, phone, email
+	private Integer id;
+	private String name, gender, phone, email;
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/layouts/layout}">
+
+<body layout:fragment="container">
+<h3 class="my-4">고객목록</h3>
+<table class="tb-list">
+		<colgroup>
+			<col>
+			<col width="300px">
+			<col width="400px">
+		</colgroup>
+		<tr>
+			<th>고객명</th>
+			<th>전화번호</th>
+			<th>이메일</th>
+		</tr>
+		<tr th:if="${list == null}"><td colspan="3">고객목록이 없습니다.</td></tr>
+</table>
+</body>
+</html>

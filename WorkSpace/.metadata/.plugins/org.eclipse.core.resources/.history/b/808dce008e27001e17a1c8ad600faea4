@@ -1,0 +1,5 @@
+package smart.entity.hanul;
+
+public class Customer {
+
+}

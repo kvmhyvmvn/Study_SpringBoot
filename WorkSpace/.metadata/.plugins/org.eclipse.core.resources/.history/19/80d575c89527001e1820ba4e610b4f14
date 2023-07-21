@@ -1,0 +1,5 @@
+package smart.repository.hanul;
+
+public interface CustomerRepository {
+
+}

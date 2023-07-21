@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+	<th:block th:switch="${session.category}">
+	<title>스마트웹&amp;앱
+		<th:block th:case="cu"></th:block>
+	</title>
+	</th:block>
+
+	<!-- Favicon-->
+	<link rel="icon" type="image/x-icon" th:href="@{/img/hanul.ico}" />
+	<!-- Core theme CSS (includes Bootstrap)-->
+	<link th:href="@{/css/styles.css}" rel="stylesheet" />
+	<link th:href="@{/css/common.css}" rel="stylesheet" />
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+	<!--  cdnjs.com > fontawesome 검색 > styling, javascript 선언문 복사해서 넣기 -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+	<!--  //fontawesome -->
+	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+	<script th:src="@{/js/common.js}"></script>
+</head>
+
+<body>
+	<div class="d-flex" id="wrapper">
+		<!-- Sidebar-->
+		<div class="border-end bg-white" id="sidebar-wrapper">
+			<div class="sidebar-heading border-bottom bg-light">
+				<a th:href="@{/}"> 
+					<img style="width: 20%" class="me-2" th:src="@{/img/hanul.logo.png}">
+					<span>스마트웹&amp;앱</span>
+				</a>
+			</div>
+			<div class="list-group list-group-flush">
+				<a th:href="@{/customer/list}" th:classappend="${session.category == 'cu'} ? 'active'"
+					class=" active list-group-item list-group-item-action list-group-item-light p-3">고객관리</a>
+				<a th:href="@{/hr/list}" th:classappend="${session.category == 'hr'} ? 'active'"
+					class="list-group-item list-group-item-action list-group-item-light p-3">사원관리</a>
+				<a class="${category eq 'no' ? 'active':''} list-group-item list-group-item-action list-group-item-light p-3">공지사항</a>
+				<a class="${category eq 'bo' ? 'active':''} list-group-item list-group-item-action list-group-item-light p-3">방명록</a>
+				<a class="${category eq 'da' ? 'active':''} list-group-item list-group-item-action list-group-item-light p-3">공공데이터</a>
+				<a class="${category eq 'vi' ? 'active':''} list-group-item list-group-item-action list-group-item-light p-3">시각화</a>
+				<a class="${category eq 'khm' ? 'active':''} list-group-item list-group-item-action list-group-item-light p-3">김혜민</a>
+			</div>
+		</div>
+		<!-- Page content wrapper-->
+		<div id="page-content-wrapper">
+			<!-- Top navigation-->
+			<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+				<div class="container-fluid">
+					<button class="btn btn-primary" id="sidebarToggle">Toggle
+						Menu</button>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+						data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+						aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+							<!-- 로그인 안 된 경우 -->
+							<li class="nav-item"><a class="nav-link">로그인</a>
+							</li>
+							<li class="nav-item"><a class="nav-link">회원가입</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			<!-- Page content-->
+			<div class="container-fluid">
+				<th:block layout:fragment="container" />
+			</div>
+			<footer class="border-top py-4 mt-4 text-center">
+				<div>Copyright &copy; My Website 2023</div>
+			</footer>
+		</div>
+	</div>
+	<!-- Bootstrap core JS-->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+	<!-- Core theme JS-->
+	<script th:src="@{/js/scripts.js}"></script>
+</body>
+
+</html>

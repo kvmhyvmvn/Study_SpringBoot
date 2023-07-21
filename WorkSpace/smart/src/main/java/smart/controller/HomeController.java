@@ -1,5 +1,7 @@
 package smart.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -7,7 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
 	
 	@RequestMapping("/")
-	public String index() {
+	public String index(HttpSession session) {
+		session.removeAttribute("category");
 		return "index";
 	}
 }
